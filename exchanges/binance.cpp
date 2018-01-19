@@ -22,7 +22,7 @@ std::vector<std::string> BINANCE_SYMBOLS = {
   "QTUMETH",
   "ETCETH",
   "ZCASHETH",
-  "BCGETH",
+  "BTGETH",
   "DASHETH",
   "USDTETH"
 };
@@ -37,7 +37,7 @@ std::unordered_map<std::string, int> BINANCE_SYMBOL_MAP = {
   {"QTUMETH",6},
   {"ETCETH", 7},
   {"ZCASHETH",8},
-  {"BCGETH", 9},
+  {"BTGETH", 9},
   {"DASHETH", 10},
   {"USDTETH",11}
 };

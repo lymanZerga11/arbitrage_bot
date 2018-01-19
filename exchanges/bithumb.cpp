@@ -20,8 +20,8 @@ std::vector<std::string> BITHUMB_SYMBOLS = {
   "EOS",
   "QTUM",
   "ETC",
-  "ZCASH",
-  "BCG",
+  "ZEC",
+  "BTG",
   "DASH",
   "ETH"
 };
@@ -35,8 +35,8 @@ std::unordered_map<std::string, int> BITHUMB_SYMBOL_MAP = {
   {"EOS", 5},
   {"QTUM",6},
   {"ETC", 7},
-  {"ZCASH", 8},
-  {"BCG", 9},
+  {"ZEC", 8},
+  {"BTG", 9},
   {"DASH", 10},
   {"ETH", 11},
 };
