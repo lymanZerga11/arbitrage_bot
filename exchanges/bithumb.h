@@ -23,6 +23,7 @@ private:
 public:
   std::vector<std::string> symbols;
   std::unordered_map<std::string, int> symbol_map;
+  std::unordered_map<std::string, std::string> universal_symbol_correspondence_map;
   static RestApi& query_handle          (std::ofstream& _log_file);
   Bithumb                               (std::ofstream& _log_file);
   Bithumb                               (const Bithumb &) =delete;

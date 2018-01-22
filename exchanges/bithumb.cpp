@@ -41,6 +41,21 @@ std::unordered_map<std::string, int> BITHUMB_SYMBOL_MAP = {
   {"ETH", 11},
 };
 
+std::unordered_map<std::string, std::string>  BITHUMB_UNIVERSAL_SYMBOL_CORRESPONDENCE_MAP = {
+  {"BTC", "BTC"},
+  {"XRP", "XRP"},
+  {"LTC", "LTC"},
+  {"BCH", "BCH"},
+  {"XMR", "XMR"},
+  {"EOS", "EOS"},
+  {"QTUM","QTUM"},
+  {"ETC", "ETC"},
+  {"ZEC", "ZEC"},
+  {"BTG", "BTG"},
+  {"DASH", "DASH"},
+  {"ETH", "ETH"},
+};
+
 RestApi& Bithumb::query_handle(std::ofstream& log_file) {
   static RestApi query("https://api.bithumb.com", nullptr, log_file);
   return query;
@@ -49,6 +64,7 @@ RestApi& Bithumb::query_handle(std::ofstream& log_file) {
 Bithumb::Bithumb (std::ofstream& _log_file) : log_file(_log_file){
   symbols = BITHUMB_SYMBOLS;
   symbol_map = BITHUMB_SYMBOL_MAP;
+  universal_symbol_correspondence_map = BITHUMB_UNIVERSAL_SYMBOL_CORRESPONDENCE_MAP;
   for(int i=0; i<BITHUMB_SYMBOLS.size(); i++)
     price.push_back(quote_t(std::make_pair(0, 0)));
   update_quotes();

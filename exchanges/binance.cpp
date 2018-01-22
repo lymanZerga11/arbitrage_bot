@@ -21,10 +21,11 @@ std::vector<std::string> BINANCE_SYMBOLS = {
   "EOSETH",
   "QTUMETH",
   "ETCETH",
-  "ZCASHETH",
+  "ZECETH",
   "BTGETH",
   "DASHETH",
-  "USDTETH"
+  "USDTETH",
+  "IOTAETH"
 };
 
 std::unordered_map<std::string, int> BINANCE_SYMBOL_MAP = {
@@ -36,10 +37,27 @@ std::unordered_map<std::string, int> BINANCE_SYMBOL_MAP = {
   {"EOSETH", 5},
   {"QTUMETH",6},
   {"ETCETH", 7},
-  {"ZCASHETH",8},
+  {"ZECETH", 8},
   {"BTGETH", 9},
   {"DASHETH", 10},
-  {"USDTETH",11}
+  {"USDTETH", 11},
+  {"IOTAETH", 12}
+};
+
+std::unordered_map<std::string, std::string> BINANCE_UNIVERSAL_SYMBOL_CORRESPONDENCE_MAP = {
+  {"BTC", "BTCETH"},
+  {"XRP", "XRPETH"},
+  {"LTC", "LTCETH"},
+  {"BCH", "BCCETH"},
+  {"XMR", "XMRETH"},
+  {"EOS", "EOSETH"},
+  {"QTUM", "QTUMETH"},
+  {"ETC", "ETCETH"},
+  {"ZEC", "ZECETH"},
+  {"BTG", "BTGETH"},
+  {"DASH", "DASHETH"},
+  {"USDT", "USDTETH"},
+  {"IOTA", "IOTAETH"}
 };
 
 RestApi& Binance::query_handle(std::ofstream& log_file) {
@@ -50,6 +68,7 @@ RestApi& Binance::query_handle(std::ofstream& log_file) {
 Binance::Binance (std::ofstream& _log_file) : log_file(_log_file){
   symbols = BINANCE_SYMBOLS;
   symbol_map = BINANCE_SYMBOL_MAP;
+  universal_symbol_correspondence_map = BINANCE_UNIVERSAL_SYMBOL_CORRESPONDENCE_MAP;
   for(int i=0; i<BINANCE_SYMBOLS.size(); i++)
     price.push_back(quote_t(std::make_pair(0, 0)));
   update_quotes();

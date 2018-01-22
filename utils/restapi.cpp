@@ -37,8 +37,8 @@ retry_state:
 
 curl_state:
   CURLcode response_curl = curl_easy_perform(C);
-  log << "cURL response code: " << response_curl << '\n'
-      << "URL: " << url << '\n';
+  // log << "cURL response code: " << response_curl << '\n'
+  //     << "URL: " << url << '\n';
   //error response code
   if (response_curl != CURLE_OK) {
     log << "Error with cURL: " << curl_easy_strerror(response_curl) << '\n'
@@ -49,8 +49,8 @@ curl_state:
 
   //error reading json
   json_error_t error;
-  log << "json text response: " << recv_buffer << '\n'
-      << "URL: " << url << '\n';
+  // log << "json text response: " << recv_buffer << '\n'
+  //     << "URL: " << url << '\n';
   json_t *root = json_loads(recv_buffer.c_str(), 0, &error);
   if (!root) {
     long response_code;

@@ -1,5 +1,5 @@
-#ifndef BINANCE_H
-#define BINANCE_H
+#ifndef COINONE_H
+#define COINONE_H
 
 #include "../utils/restapi.h"
 #include "../utils/unique_json.hpp"
@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <ctime>
 
-class Binance {
+class Coinone {
 private:
   std::ofstream& log_file;
   quote_array_t price;
@@ -25,9 +25,9 @@ public:
   std::unordered_map<std::string, int> symbol_map;
   std::unordered_map<std::string, std::string> universal_symbol_correspondence_map;
   static RestApi& query_handle          (std::ofstream& _log_file);
-  Binance                               (std::ofstream& _log_file);
-  Binance                               (const Binance &) =delete;
-  Binance& operator=                    (const Binance &) =delete;
+  Coinone                               (std::ofstream& _log_file);
+  Coinone                               (const Coinone &) =delete;
+  Coinone& operator=                    (const Coinone &) =delete;
   double get_time                       () const;
   const quote_t& get_quote              (std::string symbol) const;
   const quote_array_t& get_quote_array  () const;
